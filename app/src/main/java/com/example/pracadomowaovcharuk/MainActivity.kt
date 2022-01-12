@@ -11,12 +11,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var liczba = 1;
-
-        findViewById<Button>(R.id.prawo).setOnClickListener {
-            if(liczba == 4)
-                liczba = 1;
+        findViewById<Button>(R.id.lewo).setOnClickListener {
+            if(liczba == 1)
+                liczba = 4;
             else
-                liczba +=1;
+                liczba -=1;
 
             if(liczba == 1)
                 findViewById<ImageView>(R.id.obrazek).setImageResource(R.drawable.kot);
@@ -28,11 +27,11 @@ class MainActivity : AppCompatActivity() {
                 findViewById<ImageView>(R.id.obrazek).setImageResource(R.drawable.lis);
 
         }
-        findViewById<Button>(R.id.lewo).setOnClickListener {
-            if(liczba == 1)
-                liczba = 4;
+        findViewById<Button>(R.id.prawo).setOnClickListener {
+            if(liczba == 4)
+                liczba = 1;
             else
-                liczba -=1;
+                liczba +=1;
 
             if(liczba == 1)
                 findViewById<ImageView>(R.id.obrazek).setImageResource(R.drawable.kot);
