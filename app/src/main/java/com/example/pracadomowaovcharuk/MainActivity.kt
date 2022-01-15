@@ -3,6 +3,7 @@ package com.example.pracadomowaovcharuk
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
@@ -43,5 +44,15 @@ class MainActivity : AppCompatActivity() {
                 findViewById<ImageView>(R.id.obrazek).setImageResource(R.drawable.lis);
 
         }
+        findViewById<Button>(R.id.buttonrl).setOnClickListener {
+            var lewo = "-"+ findViewById<EditText>(R.id.editTextr).text;
+            findViewById<ImageView>(R.id.obrazek).rotation = lewo.toString().toFloat();
+        }
+        findViewById<Button>(R.id.buttonrp).setOnClickListener {
+            var lewo = findViewById<EditText>(R.id.editTextr).text;
+            findViewById<ImageView>(R.id.obrazek).rotation = lewo.toString().toFloat();
+        }
+
+
     }
 }
