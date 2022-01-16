@@ -12,11 +12,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var liczba = 1;
-        findViewById<Button>(R.id.lewo).setOnClickListener {
-            if(liczba == 1)
-                liczba = 4;
+        var skala = 1;
+
+        findViewById<Button>(R.id.prawo).setOnClickListener {
+            if(liczba == 4)
+                liczba = 1;
             else
-                liczba -=1;
+                liczba += 1;
 
             if(liczba == 1)
                 findViewById<ImageView>(R.id.obrazek).setImageResource(R.drawable.kot);
@@ -28,11 +30,11 @@ class MainActivity : AppCompatActivity() {
                 findViewById<ImageView>(R.id.obrazek).setImageResource(R.drawable.lis);
 
         }
-        findViewById<Button>(R.id.prawo).setOnClickListener {
-            if(liczba == 4)
-                liczba = 1;
+        findViewById<Button>(R.id.lewo).setOnClickListener {
+            if(liczba == 1)
+                liczba = 4;
             else
-                liczba +=1;
+                liczba -= 1;
 
             if(liczba == 1)
                 findViewById<ImageView>(R.id.obrazek).setImageResource(R.drawable.kot);
@@ -49,13 +51,17 @@ class MainActivity : AppCompatActivity() {
             findViewById<ImageView>(R.id.obrazek).rotation = lewo.toString().toFloat();
         }
         findViewById<Button>(R.id.buttonrp).setOnClickListener {
-            var lewo = findViewById<EditText>(R.id.editTextr).text;
-            findViewById<ImageView>(R.id.obrazek).rotation = lewo.toString().toFloat();
+            var prawo = findViewById<EditText>(R.id.editTextr).text;
+            findViewById<ImageView>(R.id.obrazek).rotation = prawo.toString().toFloat();
         }
         findViewById<Button>(R.id.buttonskala).setOnClickListener {
-            var skala = findViewById<EditText>(R.id.editTextskala).text;
-            findViewById<ImageView>(R.id.obrazek).scaleX = skala.toString().toFloat();
-            findViewById<ImageView>(R.id.obrazek).scaleY = skala.toString().toFloat();
+            var skalaszerokosc = findViewById<EditText>(R.id.editTextskala).text;
+            findViewById<ImageView>(R.id.obrazek).scaleX = skalaszerokosc.toString().toFloat();
+        }
+        findViewById<Button>(R.id.buttonskala2).setOnClickListener {
+            var skalawysokosc = findViewById<EditText>(R.id.editTextskala2).text;
+            findViewById<ImageView>(R.id.obrazek).scaleY = skalawysokosc.toString().toFloat();
+
         }
         findViewById<Button>(R.id.buttonprzez).setOnClickListener {
             var przezroczystosc = findViewById<EditText>(R.id.editTextprzez).text;
